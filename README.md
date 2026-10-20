@@ -307,6 +307,6 @@ Released under the [MIT License](LICENSE). See `LICENSE` for details.
 **Hacktrioz** · Team ID `VTU-QFF-HC-0019` · Tier `Both`
 · Built with ⚛️ Qiskit for the VTU-QFF Hackathon
 
-[⬆ Back to Top](#Hacktrioz)
+[⬆ Back to Top](#hacktrioz)
 
 </div>
