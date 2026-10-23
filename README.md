@@ -46,9 +46,9 @@
 
 | # | Name | GitHub Username | Role |
 | :-- | :--- | :--- | :--- |
-| 1 | _Add your name_ | _your-github-username_ | _Team Lead_ |
-| 2 | _Add your name_ | _your-github-username_ | _Developer_ |
-| 3 | _Add your name_ | _your-github-username_ | _Developer_ |
+| 1 | _Spoorti R Batakurki_ | _SPOORTI-B777_ | _Team Lead_ |
+| 2 | _Tanuja S Pujera_ | _Tanu-2008_ | _Developer_ |
+| 3 | _Shweta Baliwad _ | _ShwetaDB-code_ | _Developer_ |
 
 <!--
 Optional: add a plain list instead of the table above.
@@ -66,11 +66,11 @@ who experiences it, and why does it matter. Link to the official problem
 statement from the brief if one applies.
 -->
 
-**Problem:** _Describe the problem in 2–3 sentences._
+**Problem:** _Over irrigation, or under irrigation is a havoc to the soil and also the underwater table. This is the same incase of fertilizers too._
 
-**Why it matters:** _Explain the impact or opportunity._
+**Why it matters:** _arm fields are not uniform. Different zones can have different soil moisture, nutrient availability and irrigation needs. Treating an entire field identically can waste water or fertilizer, while excess fertilizer can contribute to environmental pollution,especially underground water table and greenhouse-gas emissionn._
 
-**Track / Category:** _Online / Offline · Track 1 / Track 2 · <domain>_
+**Track / Category:** _Online · Track 6 · <domain>_
 
 ---
 
@@ -81,11 +81,18 @@ Describe your solution. Keep it concrete: the core idea, the user flow, and
 the quantum/ML technique you are applying.
 -->
 
-**Solution:** _In 2–3 sentences, describe what you built._
+**Solution:** _Ia hybrid quantum-classical optimization prototype for sustainable agriculture,to explore irrigation-allocation decisions._
 
-**Key idea:** _The one-line technical summary of your approach._
+**Key idea:** _QSoil Guardian converts irrigation allocation into a binary optimization problem and uses a hybrid quantum-classical Quantum Approximate Optimization Algorithm workflow to explore candidate solutions, then benchmarks them against an exact classical solution to evaluate how effectively the approach solves the problem i.e., Soil Guardian uses quantum optimization to explore how to distribute limited irrigation resources among different soil zones according to their needs and priorities._
 
-**Why this works:** _How your approach addresses the problem statement._
+**Why this works:** _1. The farming decision can be expressed mathematically.
+Each zone's selection is a yes-or-no decision. That makes it possible to define a cost function that rewards higher-priority selections and penalizes exceeding the resource budget.
+
+2. Quantum Approximate Optimization Algorithm provides a structured way to search for solutions.
+The cost and mixer operations transform the quantum state so that measurements can produce different candidate bitstrings. The circuit's parameters affect which candidates are more likely to appear. A classical optimizer adjusts those parameters to seek a lower expected cost.
+
+3. The classical baseline tells us whether the result is good.
+With only four zones, we can enumerate all possible allocations and find the exact optimum. That gives us a reliable reference against which to evaluate Quantum Approximate Optimization Algorithm.._
 
 ---
 
@@ -103,11 +110,37 @@ flowchart LR
     D --> E[Output]
 ```
 
-1. **Input** — _what data goes in and in what format_
-2. **Preprocessing** — _cleaning, feature extraction, encoding_
-3. **Quantum core** — _the circuit, ansatz, or algorithm used_
-4. **Post-processing** — _decoding, measurement, scoring_
-5. **Output** — _what the user finally gets_
+1. **Input** — _
+. Soil-zone identifiers
+A priority or benefit score for each zone
+The irrigation allocation budget
+QAOA circuit parameters to be optimized
+
+FORMAT- Python data structures, primarily NumPy arrays and numerical values._
+2. **Preprocessing** — _The input data is converted into a mathematical optimization problem.
+- Assign each zone a binary decision variable: \(x_i \in \{0,1\}\).
+- Encode 1 as selected and 0 as not selected.
+- Convert the priority scores and allocation constraint into a cost function.
+- Express the objective in a form that can be represented by a quantum cost Hamiltonian.
+The project uses a penalty term to discourage selecting more zones than the budget permits_
+3. **Quantum core** — _Its parameterized circuit contains:
+- Hadamard gates (H): Initialize a superposition of possible binary assignments.
+- Cost operations (RZ and RZZ): Encode the optimization objective into quantum phase changes.
+- Mixer operations (RX): Help explore different candidate assignments.
+- Parameterized layers: Control how the cost and mixer operations are combined.
+-
+- The core algorithm is QAOA (Quantum Approximate Optimization Algorithm)._
+4. **Post-processing** — _Measure the qubits to obtain binary bitstrings.
+Decode the bitstrings into soil-zone selections.
+Evaluate each candidate using the original objective and budget constraint.
+Identify a promising allocation from the sampled results.
+Compare the result with an exact classical solution._
+
+5. **Output** — _The program produces a candidate irrigation-allocation plan showing:
+- Which soil zones are selected
+- The objective score of the candidate
+- Whether it satisfies the allocation constraint
+- The comparison with the exact classical baseline_
 
 ---
 
