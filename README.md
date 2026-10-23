@@ -96,6 +96,9 @@ With only four zones, we can enumerate all possible allocations and find the exa
 
 ---
 
+PPT URL
+https://sharayeh.com/en/public-view/693fe33a-a62f-40e1-87e4-c83ac03d4290
+
 ## 🧩 Approach & Architecture
 
 <!--
@@ -302,9 +305,9 @@ git pull --rebase       # update your branch on top of main
 ## ✅ Submission Checklist
 
 - [ ] Repository created and **public**
-- [ ] All team members added as **collaborators** and invitations accepted
+- [ye ] All team members added as **collaborators** and invitations accepted
 - [ ] `README.md` updated with project details, problem statement and solution
-- [ ] Team members listed under [Team Members](#-team-members-github-ids)
+- [yes] Team members listed under [Team Members](#-team-members-github-ids)
 - [ ] `requirements.txt` committed and project runs from a clean clone
 - [ ] Code pushed to `main` and the latest `main` builds successfully
 - [ ] Notebooks committed with **cleared outputs** (or use `nbstrip`)
