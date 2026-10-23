@@ -81,7 +81,7 @@ Describe your solution. Keep it concrete: the core idea, the user flow, and
 the quantum/ML technique you are applying.
 -->
 
-**Solution:** _Ia hybrid quantum-classical optimization prototype for sustainable agriculture,to explore irrigation-allocation decisions._
+**Solution:** _A hybrid quantum-classical optimization prototype for sustainable agriculture,to explore irrigation-allocation decisions._
 
 **Key idea:** _QSoil Guardian converts irrigation allocation into a binary optimization problem and uses a hybrid quantum-classical Quantum Approximate Optimization Algorithm workflow to explore candidate solutions, then benchmarks them against an exact classical solution to evaluate how effectively the approach solves the problem i.e., Soil Guardian uses quantum optimization to explore how to distribute limited irrigation resources among different soil zones according to their needs and priorities._
 
